@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#063B78">
+  <meta name="description" content="Desafío Acoge, experiencia formativa sobre familias de acogida.">
+  <title>Desafío Acoge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { 900: "#063B78", 700: "#07559A", 500: "#0878BE" },
+            accent: { orange: "#FF7800", yellow: "#FFC21C" },
+            success: { 700: "#15803D", 500: "#22A84A", 100: "#E9F8EC" },
+            info: "#44B7DE",
+            danger: "#DC3545",
+            heart: "#F43F4F",
+            lock: "#718096",
+            ink: "#0B376B",
+            muted: "#52677F",
+            warm: "#FFF9EF",
+            soft: "#F6F8FA",
+            line: "#D8DEE6",
+            focus: "#7C3AED"
+          },
+          fontFamily: {
+            display: ["Nunito", "Trebuchet MS", "sans-serif"],
+            body: ["Inter", "Segoe UI", "Arial", "sans-serif"]
+          },
+          boxShadow: {
+            card: "0 10px 30px rgb(6 59 120 / 12%)",
+            float: "0 16px 40px rgb(6 59 120 / 18%)"
+          },
+          borderRadius: { card: "1.25rem" },
+          outlineWidth: { 3: "3px" }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="css/app.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body class="m-0 min-h-dvh bg-[#FFF9EF] font-body text-base font-normal leading-normal text-[#0B376B]">
+  <a class="absolute left-4 top-[-4rem] z-[100] rounded-xl bg-[#063B78] px-4 py-3 font-bold text-white no-underline focus:top-3" href="#main-content">Saltar al contenido</a>
+
+  <div id="app" class="relative mx-auto flex min-h-dvh max-w-[30rem] flex-col bg-white shadow-float">
+    <header id="app-header"></header>
+    <main id="main-content" tabindex="-1"></main>
+    <nav id="bottom-nav" aria-label="Navegación principal"></nav>
+  </div>
+
+  <div id="toast-region" class="pointer-events-none fixed inset-x-0 bottom-24 z-40 grid justify-items-center" aria-live="polite" aria-atomic="true"></div>
+  <dialog id="app-dialog" class="w-[min(22rem,calc(100%-2rem))] rounded-[1.25rem] border-0 bg-white p-6 text-[#0B376B] shadow-[0_16px_40px_rgb(6_59_120_/_18%)]"></dialog>
+
+  <noscript>Necesitas activar JavaScript para usar Desafío Acoge.</noscript>
+</body>
+</html>

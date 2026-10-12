@@ -1,0 +1,42 @@
+{
+  "id": "demo-user",
+  "displayName": "Camila",
+  "points": 350,
+  "level": "Explorador",
+  "currentMissionId": "mission-1",
+  "currentActivityId": "q02",
+  "completedMissionIds": ["mission-0"],
+  "completedActivities": {
+    "fam00": {
+      "selectedOptionIds": ["d"],
+      "isRecommended": true,
+      "pointsAwarded": 200,
+      "awardedAt": "2026-10-01T10:00:00-03:00"
+    },
+    "q01": {
+      "selectedOptionIds": ["b"],
+      "isRecommended": true,
+      "pointsAwarded": 50,
+      "awardedAt": "2026-10-07T18:30:00-03:00"
+    }
+  },
+  "badgeIds": ["first-step", "conversacion-en-familia"],
+  "redemptions": [],
+  "pointMovements": [
+    {
+      "id": "mov-fam00",
+      "label": "Actividad familiar: Motivaciones",
+      "delta": 200,
+      "createdAt": "2026-10-01T10:00:00-03:00",
+      "balanceAfter": 200
+    },
+    {
+      "id": "mov-mission-0",
+      "label": "Misión completada: Motivaciones y expectativas",
+      "delta": 150,
+      "createdAt": "2026-10-01T10:05:00-03:00",
+      "balanceAfter": 350
+    }
+  ],
+  "journeyAwarded": false
+}
