@@ -40,7 +40,7 @@ function el(tag, attrs = {}, ...children) {
 }
 
 function svg(name) {
-  return el("span", { class: "inline-flex", html: icon(name) });
+  return el("span", { class: "inline-flex items-center justify-center leading-none", html: icon(name) });
 }
 
 function brand(compact = false) {
@@ -94,10 +94,10 @@ export function renderHeader(route, state) {
     return;
   }
 
-  header.className = ui.header;
+  header.className = route.name === "missions" ? ui.headerMissions : ui.header;
   header.append(
-    el("button", { class: ui.iconBtn, type: "button", "aria-label": "Volver", "data-action": "back" }, svg("back")),
-    brand(true),
+    el("button", { class: `${ui.iconBtn} shrink-0`, type: "button", "aria-label": "Volver", "data-action": "back" }, svg("back")),
+    el("div", { class: "min-w-0 flex-1" }, brand(true)),
     pointsPill(state)
   );
 }
@@ -149,8 +149,6 @@ export function renderHome(state, catalog) {
   const mission = currentMission(state, catalog.missions);
   const progress = missionProgress(mission, state);
   const activityId = firstIncompleteActivity(mission, state);
-  const art = el("div", { class: "mx-auto max-w-[16.25rem]" });
-  art.innerHTML = icon("family");
   return el(
     "section",
     {
@@ -168,18 +166,23 @@ export function renderHome(state, catalog) {
     ),
     el(
       "div",
-      { class: "relative overflow-hidden rounded-card p-4" },
-      art,
-      el(
-        "p",
-        { class: "relative ml-auto max-w-[12rem] text-right font-display text-[1.05rem] font-extrabold leading-tight" },
-        "Las grandes historias también empiezan con una pregunta"
-      )
+      { class: "px-2" },
+      el("img", {
+        src: "screens/familia.png",
+        alt: "Familia abrazada con un perro. Las grandes historias también empiezan con una pregunta.",
+        class: "mx-auto block h-auto w-full max-w-sm"
+      })
     ),
     el(
       "a",
       { class: cx(ui.card, "grid grid-cols-[auto_1fr_auto] items-center gap-3 p-4 no-underline"), href: `#/misiones/${mission.id}` },
-      el("div", { class: "grid h-14 w-14 place-items-center rounded-[1.1rem] bg-[#fff4e5]" }, svg(iconKey(mission.icon))),
+      mission.id === "mission-1"
+        ? el(
+            "div",
+            { class: "h-14 w-14 overflow-hidden rounded-[1.1rem] bg-[#fff4e5]" },
+            el("img", { src: "screens/nina.png", alt: "", class: "h-full w-full object-cover object-top" })
+          )
+        : el("div", { class: "grid h-14 w-14 place-items-center rounded-[1.1rem] bg-[#fff4e5]" }, svg(iconKey(mission.icon))),
       el(
         "div",
         {},
@@ -242,77 +245,74 @@ function iconKey(name) {
   return map[name] || "sprout";
 }
 
+const MAP_NODES = [
+  { order: 0, top: 82, left: 33, align: "top" },
+  { order: 1, top: 73, left: 37, align: "right" },
+  { order: 2, top: 63, left: 47, align: "right" },
+  { order: 3, top: 54, left: 40, align: "right" },
+  { order: 4, top: 45, left: 50, align: "right" },
+  { order: 5, top: 36, left: 42, align: "left" },
+  { order: 6, top: 26, left: 48, align: "left" },
+  { order: 7, top: 13, left: 50, align: "right" }
+];
+
 export function renderMissions(state, catalog) {
-  const missions = [...catalog.missions].sort((a, b) => b.order - a.order);
+  const missions = [...catalog.missions].sort((a, b) => a.order - b.order);
   return el(
     "section",
     {
-      class: cx(ui.screen, "bg-gradient-to-b from-[#e7f6ff] via-[#dff6c8] to-[#c8e89a] pb-[7.5rem]"),
+      class: "relative min-h-full bg-[#5aad4a]",
       "aria-labelledby": "screen-title"
     },
+    el("h1", { id: "screen-title", class: "sr-only" }, "Tu ruta de aprendizaje"),
     el(
       "div",
-      { class: "text-center" },
-      el("h1", { id: "screen-title", class: "font-display text-xl font-extrabold leading-tight" }, "Tu ruta de aprendizaje"),
-      el("p", { class: cx(ui.eyebrow, "mt-2") }, "Siete misiones para que llegues con más herramientas a la postulación.")
-    ),
-    el(
-      "div",
-      { class: "mission-path relative grid gap-5 py-2 pb-8" },
-      ...missions.map((mission, index) => missionNode(mission, state, catalog.missions, index))
+      { class: "mission-map" },
+      el("img", {
+        src: "screens/mapa_bg.png",
+        alt: "Camino ilustrado hacia un cerro con bandera, con una familia observando el paisaje.",
+        width: "1024",
+        height: "1536"
+      }),
+      ...missions.map((mission) => missionPin(mission, state, catalog.missions))
     )
   );
 }
 
-function missionNode(mission, state, missions, index) {
+function pinGlyph(status, mission) {
+  if (status === "completed") return icon("pinCheck");
+  if (status === "locked") return icon("pinLock");
+  const key = iconKey(mission.icon);
+  return key === "door" ? icon("pinDoor") : icon(key);
+}
+
+function missionPin(mission, state, missions) {
   const status = missionStatus(mission, state, missions);
-  const side = index % 2 === 0 ? "right" : "left";
+  const place = MAP_NODES.find((node) => node.order === mission.order) || MAP_NODES[0];
   const locked = status === "locked";
-  const card = el(
+  const side = place.align === "left" ? "left" : "right";
+  return el(
     locked ? "button" : "a",
     {
-      class: cx(
-        ui.card,
-        "border-0 p-3 text-left",
-        locked && "bg-white/80",
-        status === "current" && "ring-2 ring-[#0878BE]"
-      ),
+      class: `mission-pin mission-pin--${status} mission-pin--${side}`,
+      style: `top:${place.top}%;left:${place.left}%`,
       href: locked ? null : `#/misiones/${mission.id}`,
       type: locked ? "button" : null,
+      "aria-label": `${mission.title}. ${statusLabel(status)}`,
       "data-action": locked ? "locked-mission" : null,
       dataset: locked ? { missionId: mission.id } : {}
     },
-    status === "current"
-      ? el("span", { class: "mb-1 inline-block rounded-full bg-[#063B78] px-2 py-0.5 text-[0.65rem] font-extrabold text-white" }, "Continúa aquí")
-      : null,
+    el("span", {
+      class: "mission-pin__icon",
+      html: pinGlyph(status, mission)
+    }),
     el(
-      "strong",
-      { class: cx("mb-1 block text-xs font-extrabold", status === "current" && "text-[#07559A]") },
-      statusLabel(status)
-    ),
-    el("span", { class: "text-xs text-[#52677F]" }, `${mission.order === 7 ? "Misión final" : `Misión ${mission.order}`}`),
-    el("h2", { class: "font-display text-base font-extrabold leading-tight" }, mission.title)
-  );
-
-  const nodeIcon = el(
-    "div",
-    {
-      class: cx(
-        "grid h-[3.4rem] w-[3.4rem] place-items-center rounded-full bg-white shadow-card",
-        status === "completed" && "bg-[#E9F8EC] text-[#15803D]",
-        status === "locked" && "text-[#718096]"
-      )
-    },
-    status === "completed" ? svg("check") : status === "locked" ? svg("lock") : svg(iconKey(mission.icon))
-  );
-
-  const spacer = el("span", { "aria-hidden": "true" });
-  return el(
-    "article",
-    { class: "relative z-10 grid grid-cols-[1fr_auto_1fr] items-center gap-2" },
-    side === "left" ? card : spacer,
-    nodeIcon,
-    side === "right" ? card : spacer
+      "span",
+      { class: "mission-pin__text" },
+      status === "current" ? el("span", { class: "mission-pin__eyebrow" }, "Continúa aquí") : null,
+      el("span", { class: "mission-pin__meta" }, mission.order === 7 ? "Misión final" : `Misión ${mission.order}`),
+      el("strong", { class: "mission-pin__title" }, mission.title)
+    )
   );
 }
 
@@ -336,7 +336,13 @@ export function renderMissionDetail(state, catalog, missionId) {
   return el(
     "section",
     { class: ui.screen, "aria-labelledby": "screen-title" },
-    el("div", { class: "grid h-16 w-16 place-items-center rounded-2xl bg-[#fff4e5]" }, svg(iconKey(mission.icon))),
+    mission.id === "mission-1"
+      ? el("img", {
+          src: "screens/nina.png",
+          alt: "Niña pensando con un lápiz. Pequeñas preguntas, grandes cambios.",
+          class: "mx-auto block h-auto w-full rounded-card"
+        })
+      : el("div", { class: "grid h-16 w-16 place-items-center rounded-2xl bg-[#fff4e5]" }, svg(iconKey(mission.icon))),
     el("h1", { id: "screen-title", class: "font-display text-2xl font-extrabold leading-tight" }, mission.title),
     el("p", {}, mission.shortDescription),
     el("p", { class: ui.eyebrow }, `${mission.estimatedMinutes} minutos · ${progress.done} de ${progress.total} actividades`),
@@ -457,6 +463,13 @@ export function renderActivity(state, catalog, activityId) {
       )
     ),
     el("h1", { id: "screen-title", class: "sr-only" }, activity.title),
+    mission.id === "mission-1"
+      ? el("img", {
+          src: "screens/nina.png",
+          alt: "Niña pensando con un lápiz. Pequeñas preguntas, grandes cambios.",
+          class: "mx-auto block h-auto w-full max-h-56 rounded-card object-contain"
+        })
+      : null,
     el("p", { class: "text-[1.05rem] font-semibold" }, activity.prompt),
     activity.question ? el("p", { class: "mt-1 font-display text-lg font-extrabold" }, activity.question) : null,
     el("form", { id: "activity-form", "data-activity-id": activity.id }, field),
@@ -645,11 +658,11 @@ export function renderRewards(state, catalog, filter = "all") {
 function rewardCard(reward, state) {
   const missing = missingPoints(state, reward);
   const enough = missing === 0;
-  const art = el("div", { class: "grid h-[5.5rem] place-items-center rounded-xl bg-[#FFF9EF]" });
+  const art = el("div", { class: "reward-art" });
   art.innerHTML = icon(reward.image);
   return el(
     "article",
-    { class: cx(ui.card, "grid gap-2 p-3") },
+    { class: cx(ui.card, "grid gap-2 overflow-hidden p-3") },
     art,
     el("h3", { class: "font-display text-[0.95rem] font-extrabold leading-tight" }, reward.title),
     el("p", { class: "text-xs text-[#52677F]" }, reward.description),
@@ -784,6 +797,7 @@ export function renderScreen(route, state, catalog, rewardFilter = "all") {
   else if (route.name === "accessibility") view = renderAccessibility();
   else view = renderHome(state, catalog);
 
+  main.className = route.name === "missions" ? "flex-1 bg-[#5aad4a]" : "";
   main.replaceChildren(view);
 }
 

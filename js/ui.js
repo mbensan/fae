@@ -3,7 +3,9 @@ export const ui = {
     "absolute left-4 top-[-4rem] z-[100] rounded-xl bg-[#063B78] px-4 py-3 font-bold text-white no-underline focus:top-3",
   shell: "relative mx-auto flex min-h-dvh max-w-[30rem] flex-col bg-white shadow-float",
   header:
-    "sticky top-0 z-20 grid min-h-[4.25rem] shrink-0 grid-cols-[2.75rem_1fr_auto] items-center gap-2 bg-white/90 px-4 py-3 backdrop-blur",
+    "sticky top-0 z-20 flex min-h-[4.25rem] shrink-0 items-center gap-2 bg-white/90 px-4 py-3 backdrop-blur",
+  headerMissions:
+    "sticky top-0 z-20 flex min-h-[4.25rem] shrink-0 items-center gap-2 bg-white/80 px-4 py-3 backdrop-blur",
   headerHome: "sticky top-0 z-20 flex min-h-[4.25rem] shrink-0 items-center justify-between gap-3 bg-[#f4fbff] px-4 py-3",
   iconBtn:
     "inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#063B78] shadow-[0_2px_10px_rgb(6_59_120_/_14%)] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-[#7C3AED]",
@@ -13,7 +15,7 @@ export const ui = {
   brandDesafioSm: "text-[0.95rem] tracking-wide text-[#063B78]",
   brandAcogeSm: "-mt-0.5 text-[1.2rem] tracking-wider text-[#FF7800]",
   points:
-    "inline-flex min-h-11 items-center gap-2 rounded-full border border-[#D8DEE6] bg-white px-4 py-2 font-bold text-[#0B376B] shadow-[0_10px_30px_rgb(6_59_120_/_12%)] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-[#7C3AED]",
+    "inline-flex min-h-11 shrink-0 items-center gap-2 rounded-full border border-[#D8DEE6] bg-white px-4 py-2 font-bold text-[#0B376B] shadow-[0_10px_30px_rgb(6_59_120_/_12%)] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-[#7C3AED]",
   avatar: "h-11 w-11 overflow-hidden rounded-full bg-[#d7ecff] shadow-[0_0_0_3px_#fff,0_0_0_5px_#cfe6ff]",
   nav: "sticky bottom-0 z-30 mt-auto grid grid-cols-5 gap-1 rounded-t-[2rem] bg-white px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 shadow-[0_-8px_24px_rgb(6_59_120_/_8%)]",
   navItem:

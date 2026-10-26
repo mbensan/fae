@@ -50,16 +50,137 @@
   pointer-events: none;
 }
 
-.mission-path::before {
-  content: "";
+.reward-art {
+  height: 7rem;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  background: #fff9ef;
+}
+
+.reward-art svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+#app-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-height: 4.25rem;
+}
+
+.mission-map {
+  position: relative;
+  overflow: hidden;
+  background: #8ec8f0;
+}
+
+.mission-map img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mission-pin {
   position: absolute;
-  top: 1rem;
-  bottom: 2rem;
-  left: 50%;
-  width: 6px;
-  margin-left: -3px;
-  border-radius: 999px;
-  background: repeating-linear-gradient(180deg, #f4e1b5 0 10px, transparent 10px 18px);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: max-content;
+  max-width: 10.75rem;
+  padding: 0.3rem 0.55rem 0.3rem 0.3rem;
+  border: 0;
+  border-radius: 0.95rem;
+  background: rgb(255 255 255 / 90%);
+  box-shadow: 0 8px 18px rgb(6 59 120 / 16%);
+  color: #0b376b;
+  text-align: left;
+  text-decoration: none;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+
+.mission-pin--left {
+  flex-direction: row-reverse;
+  padding: 0.3rem 0.3rem 0.3rem 0.55rem;
+  text-align: right;
+}
+
+.mission-pin__icon {
+  display: grid;
+  width: 2.1rem;
+  height: 2.1rem;
+  flex: 0 0 2.1rem;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 96%);
+  box-shadow: inset 0 0 0 1px rgb(6 59 120 / 10%);
+  color: #063b78;
+  line-height: 0;
+}
+
+.mission-pin__icon svg {
+  display: block;
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+  margin: 0;
+  overflow: visible;
+}
+
+.mission-pin__text {
+  min-width: 0;
+}
+
+.mission-pin__eyebrow {
+  display: block;
+  color: #07559a;
+  font-size: 0.58rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.mission-pin__meta {
+  display: block;
+  color: #52677f;
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.mission-pin__title {
+  display: block;
+  font-family: Nunito, "Trebuchet MS", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.mission-pin--completed .mission-pin__icon {
+  background: #e9f8ec;
+  color: #15803d;
+}
+
+.mission-pin--locked .mission-pin__icon {
+  background: rgb(246 248 250 / 90%);
+  color: #718096;
+}
+
+.mission-pin--current {
+  z-index: 4;
+  box-shadow: 0 0 0 2px #0878be, 0 8px 18px rgb(6 59 120 / 16%);
+}
+
+.mission-pin:focus-visible {
+  outline: 3px solid #7c3aed;
+  outline-offset: 3px;
 }
 
 dialog::backdrop {
