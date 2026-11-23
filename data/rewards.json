@@ -1,0 +1,68 @@
+[
+  {
+    "id": "reward-guide",
+    "category": "digital",
+    "title": "Guía digital “Familias que acogen”",
+    "description": "Material exclusivo para seguir aprendiendo sobre el acogimiento familiar.",
+    "cost": 300,
+    "image": "guide",
+    "available": true,
+    "stock": null,
+    "actionLabel": "Canjear"
+  },
+  {
+    "id": "reward-mug",
+    "category": "product",
+    "title": "Tazón Desafío Acoge",
+    "description": "Llévate un recuerdo del camino que estamos construyendo juntos.",
+    "cost": 500,
+    "image": "mug",
+    "available": true,
+    "stock": null,
+    "actionLabel": "Canjear"
+  },
+  {
+    "id": "reward-workshop",
+    "category": "experience",
+    "title": "Acceso a taller online con especialistas",
+    "description": "Espacio de conversación y preguntas en vivo.",
+    "cost": 1000,
+    "image": "workshop",
+    "available": true,
+    "stock": null,
+    "actionLabel": "Canjear"
+  },
+  {
+    "id": "reward-cards",
+    "category": "product",
+    "title": "Kit de conversación familiar",
+    "description": "Actividades para conversar en familia sobre el acogimiento.",
+    "cost": 700,
+    "image": "cards",
+    "available": true,
+    "stock": null,
+    "actionLabel": "Canjear"
+  },
+  {
+    "id": "reward-raffle",
+    "category": "raffle",
+    "title": "Sorteo mensual",
+    "description": "Participa por libros, juegos y más sorpresas.",
+    "cost": 200,
+    "image": "gift",
+    "available": true,
+    "stock": null,
+    "actionLabel": "Participar"
+  },
+  {
+    "id": "reward-badges",
+    "category": "digital",
+    "title": "Insignias digitales",
+    "description": "Colecciona insignias especiales de tu recorrido en Desafío Acoge.",
+    "cost": 150,
+    "image": "badges",
+    "available": true,
+    "stock": null,
+    "actionLabel": "Canjear"
+  }
+]

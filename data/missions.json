@@ -1,0 +1,98 @@
+[
+  {
+    "id": "mission-0",
+    "order": 0,
+    "title": "Motivaciones y expectativas",
+    "shortDescription": "Reconoce por qué exploras el acogimiento y qué esperas del proceso.",
+    "icon": "sprout",
+    "theme": "green",
+    "prerequisites": [],
+    "activityIds": ["fam00"],
+    "completionBonus": 150,
+    "estimatedMinutes": 6
+  },
+  {
+    "id": "mission-1",
+    "order": 1,
+    "title": "Abrir la puerta",
+    "shortDescription": "Conoce qué es una familia de acogida y cómo puedes ser parte.",
+    "icon": "door",
+    "theme": "orange",
+    "prerequisites": ["mission-0"],
+    "activityIds": ["q01", "q02", "case02"],
+    "completionBonus": 150,
+    "estimatedMinutes": 8
+  },
+  {
+    "id": "mission-2",
+    "order": 2,
+    "title": "Mirar con otros ojos",
+    "shortDescription": "Cuida la privacidad y reconoce los apoyos del programa.",
+    "icon": "binoculars",
+    "theme": "cyan",
+    "prerequisites": ["mission-1"],
+    "activityIds": ["q03", "q09", "case04"],
+    "completionBonus": 150,
+    "estimatedMinutes": 8
+  },
+  {
+    "id": "mission-3",
+    "order": 3,
+    "title": "La familia completa",
+    "shortDescription": "Conversen en el hogar sobre espacios, edades y cambios de rutina.",
+    "icon": "home",
+    "theme": "yellow",
+    "prerequisites": ["mission-2"],
+    "activityIds": ["q04", "q05"],
+    "completionBonus": 150,
+    "estimatedMinutes": 7
+  },
+  {
+    "id": "mission-4",
+    "order": 4,
+    "title": "Vínculos y familia de origen",
+    "shortDescription": "Acompaña sin promesas inciertas y respeta los vínculos existentes.",
+    "icon": "people",
+    "theme": "teal",
+    "prerequisites": ["mission-3"],
+    "activityIds": ["q07", "case01", "case03"],
+    "completionBonus": 150,
+    "estimatedMinutes": 10
+  },
+  {
+    "id": "mission-5",
+    "order": 5,
+    "title": "Cuando las cosas se ponen difíciles",
+    "shortDescription": "Pedir apoyo es una conducta responsable, no un fracaso.",
+    "icon": "storm",
+    "theme": "purple",
+    "prerequisites": ["mission-4"],
+    "activityIds": ["q08", "case05"],
+    "completionBonus": 150,
+    "estimatedMinutes": 8
+  },
+  {
+    "id": "mission-6",
+    "order": 6,
+    "title": "Dejar ir",
+    "shortDescription": "El acogimiento es temporal y su duración depende de cada situación.",
+    "icon": "paper-plane",
+    "theme": "blue",
+    "prerequisites": ["mission-5"],
+    "activityIds": ["q06"],
+    "completionBonus": 150,
+    "estimatedMinutes": 6
+  },
+  {
+    "id": "mission-final",
+    "order": 7,
+    "title": "Decisión informada",
+    "shortDescription": "Reúne lo aprendido y conversa en tu hogar antes de avanzar.",
+    "icon": "flag",
+    "theme": "red",
+    "prerequisites": ["mission-6"],
+    "activityIds": ["q10"],
+    "completionBonus": 150,
+    "estimatedMinutes": 6
+  }
+]

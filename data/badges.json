@@ -1,0 +1,32 @@
+[
+  {
+    "id": "first-step",
+    "title": "Primer paso",
+    "description": "Completaste tu primera actividad de aprendizaje."
+  },
+  {
+    "id": "rompe-mitos",
+    "title": "Rompe Mitos",
+    "description": "Revisaste con mirada crítica mitos frecuentes sobre el acogimiento."
+  },
+  {
+    "id": "mirada-abierta",
+    "title": "Mirada Abierta",
+    "description": "Completaste la misión Mirar con otros ojos."
+  },
+  {
+    "id": "conversacion-en-familia",
+    "title": "Conversación en Familia",
+    "description": "Practicaste una conversación consciente en el hogar."
+  },
+  {
+    "id": "buen-acompanamiento",
+    "title": "Buen Acompañamiento",
+    "description": "Elegiste alternativas que escuchan, validan y piden orientación."
+  },
+  {
+    "id": "decision-informada",
+    "title": "Decisión Informada",
+    "description": "Completaste el recorrido y conversaste los aspectos clave antes de avanzar."
+  }
+]

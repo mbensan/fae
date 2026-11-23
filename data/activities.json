@@ -1,0 +1,338 @@
+[
+  {
+    "id": "fam00",
+    "missionId": "mission-0",
+    "type": "family-activity",
+    "title": "Motivaciones",
+    "prompt": "¿Qué te mueve a explorar el acogimiento familiar en este momento?",
+    "options": [
+      { "id": "a", "text": "La convicción de que todo niño, niña o adolescente merece un entorno protector." },
+      { "id": "b", "text": "El deseo de acompañar de forma temporal, no de reemplazar a la familia de origen." },
+      { "id": "c", "text": "La necesidad de conversarlo con todas las personas del hogar." },
+      { "id": "d", "text": "Todas las anteriores." }
+    ],
+    "correctOptionIds": ["a", "b", "c", "d"],
+    "participationPoints": 200,
+    "correctBonus": 0,
+    "feedback": {
+      "recommended": "Explorar motivaciones y expectativas en familia es un primer paso responsable. No hay una única respuesta correcta.",
+      "review": "Cualquiera de estas conversaciones suma. Lo importante es hacerlas con honestidad y sin apuro."
+    },
+    "sourceIds": ["official-program-01"]
+  },
+  {
+    "id": "q01",
+    "missionId": "mission-1",
+    "type": "single-choice",
+    "title": "Propósito de la acogida",
+    "prompt": "¿Cuál es el propósito principal de una familia de acogida?",
+    "options": [
+      { "id": "a", "text": "Adoptar inmediatamente a un niño o niña." },
+      { "id": "b", "text": "Entregar cuidado temporal, protector y seguro." },
+      { "id": "c", "text": "Reemplazar permanentemente a la familia de origen." },
+      { "id": "d", "text": "Participar solo en actividades recreativas." }
+    ],
+    "correctOptionIds": ["b"],
+    "participationPoints": 10,
+    "correctBonus": 40,
+    "feedback": {
+      "recommended": "Una familia de acogida entrega cuidado y protección temporal mientras se define la alternativa correspondiente para el niño, niña o adolescente.",
+      "review": "Miremos nuevamente el carácter temporal y protector del acogimiento. No se trata de adoptar de inmediato ni de reemplazar a la familia de origen."
+    },
+    "sourceIds": ["official-faq-01"]
+  },
+  {
+    "id": "q02",
+    "missionId": "mission-1",
+    "type": "myth-reality",
+    "title": "Acogida y adopción",
+    "prompt": "“Ser familia de acogida es lo mismo que iniciar una adopción”.",
+    "options": [
+      { "id": "mito", "text": "Mito" },
+      { "id": "realidad", "text": "Realidad" }
+    ],
+    "correctOptionIds": ["mito"],
+    "participationPoints": 10,
+    "correctBonus": 40,
+    "feedback": {
+      "recommended": "El acogimiento y la adopción son procesos distintos. El acogimiento es una medida de cuidado temporal.",
+      "review": "Es una duda frecuente. Acoger no equivale a iniciar una adopción: son caminos diferentes, con objetivos y tiempos distintos."
+    },
+    "sourceIds": ["official-faq-01"]
+  },
+  {
+    "id": "case02",
+    "missionId": "mission-1",
+    "type": "case",
+    "title": "Conversación en el hogar",
+    "prompt": "Una persona del hogar está muy entusiasmada con la posibilidad de acoger, pero otra expresa dudas sobre los cambios en rutinas y espacios compartidos.",
+    "question": "¿Qué harías?",
+    "options": [
+      { "id": "a", "text": "Iniciar la postulación de todas formas." },
+      { "id": "b", "text": "Evitar el tema para que no surjan más dudas." },
+      { "id": "c", "text": "Conversar sobre expectativas, temores, responsabilidades y límites antes de avanzar." },
+      { "id": "d", "text": "Pedir que decida la persona más entusiasmada." }
+    ],
+    "correctOptionIds": ["c"],
+    "participationPoints": 100,
+    "correctBonus": 0,
+    "feedback": {
+      "recommended": "Tener dudas no es un fracaso. Conversarlas permite tomar una decisión más consciente.",
+      "review": "Miremos esta situación nuevamente. Avanzar sin conversar las dudas del hogar suele generar más tensión después."
+    },
+    "sourceIds": ["official-program-01"]
+  },
+  {
+    "id": "q03",
+    "missionId": "mission-2",
+    "type": "multiple-choice",
+    "title": "Apoyos disponibles",
+    "prompt": "¿Qué apoyo puede recibir una familia de acogida?",
+    "options": [
+      { "id": "a", "text": "Acompañamiento psicosocial." },
+      { "id": "b", "text": "Apoyo para el niño, niña o adolescente." },
+      { "id": "c", "text": "Apoyo monetario o en especies, según el programa." },
+      { "id": "d", "text": "Ningún apoyo durante el acogimiento." }
+    ],
+    "correctOptionIds": ["a", "b", "c"],
+    "participationPoints": 10,
+    "correctBonus": 40,
+    "feedback": {
+      "recommended": "El acompañamiento y los apoyos disponibles deben explicarse durante el proceso formal correspondiente.",
+      "review": "Una familia de acogida no está sola. Hay acompañamiento y apoyos que se informan en el proceso formal. La opción “ningún apoyo” no corresponde."
+    },
+    "sourceIds": ["official-faq-01"]
+  },
+  {
+    "id": "q09",
+    "missionId": "mission-2",
+    "type": "single-choice",
+    "title": "Privacidad",
+    "prompt": "¿Qué harías si una persona cercana pide detalles personales de la historia de un niño o niña acogido?",
+    "options": [
+      { "id": "a", "text": "Compartir solo los detalles más interesantes." },
+      { "id": "b", "text": "Contar la historia sin mencionar el nombre." },
+      { "id": "c", "text": "Proteger la privacidad y no compartir antecedentes personales." },
+      { "id": "d", "text": "Publicar una explicación general en redes sociales." }
+    ],
+    "correctOptionIds": ["c"],
+    "participationPoints": 10,
+    "correctBonus": 40,
+    "feedback": {
+      "recommended": "Proteger la privacidad forma parte del cuidado.",
+      "review": "Aunque se omita el nombre, los antecedentes personales no deben compartirse. La curiosidad de otras personas no justifica entregar esa información."
+    },
+    "sourceIds": ["official-faq-01"]
+  },
+  {
+    "id": "case04",
+    "missionId": "mission-2",
+    "type": "case",
+    "title": "Una pregunta indiscreta",
+    "prompt": "Una persona conocida pregunta detalles sobre la historia del niño o niña que vive temporalmente en el hogar.",
+    "question": "¿Qué harías?",
+    "options": [
+      { "id": "a", "text": "Compartir aspectos generales de la historia." },
+      { "id": "b", "text": "Contar la historia sin mencionar el nombre." },
+      { "id": "c", "text": "Proteger la privacidad y explicar que no corresponde compartir información personal." },
+      { "id": "d", "text": "Publicar una explicación en redes sociales." }
+    ],
+    "correctOptionIds": ["c"],
+    "participationPoints": 100,
+    "correctBonus": 0,
+    "feedback": {
+      "recommended": "La curiosidad de otras personas no justifica compartir antecedentes personales.",
+      "review": "Miremos esta situación nuevamente. Incluso un relato “sin nombre” puede exponer información que no corresponde compartir."
+    },
+    "sourceIds": ["official-program-01"]
+  },
+  {
+    "id": "q04",
+    "missionId": "mission-3",
+    "type": "myth-reality",
+    "title": "Espacio en el hogar",
+    "prompt": "“Para acoger siempre es obligatorio tener una habitación completamente exclusiva”.",
+    "options": [
+      { "id": "mito", "text": "Mito" },
+      { "id": "realidad", "text": "Realidad" }
+    ],
+    "correctOptionIds": ["mito"],
+    "participationPoints": 10,
+    "correctBonus": 40,
+    "feedback": {
+      "recommended": "La situación del hogar se evalúa de manera particular. Deben garantizarse condiciones adecuadas de cuidado y descanso.",
+      "review": "No existe una única receta de vivienda. Lo que se evalúa son condiciones adecuadas de cuidado, no un único modelo de habitación."
+    },
+    "sourceIds": ["official-faq-01"]
+  },
+  {
+    "id": "q05",
+    "missionId": "mission-3",
+    "type": "true-false",
+    "title": "Rango de edad",
+    "prompt": "“Durante la evaluación, una familia puede conversar sobre el rango de edad que considera posible acoger”.",
+    "options": [
+      { "id": "verdadero", "text": "Verdadero" },
+      { "id": "falso", "text": "Falso" }
+    ],
+    "correctOptionIds": ["verdadero"],
+    "participationPoints": 10,
+    "correctBonus": 40,
+    "feedback": {
+      "recommended": "Las posibilidades, expectativas y características del hogar forman parte de la conversación con el equipo evaluador.",
+      "review": "Sí se puede conversar. El rango de edad, las rutinas y las capacidades del hogar son parte del diálogo con el equipo."
+    },
+    "sourceIds": ["official-program-01"]
+  },
+  {
+    "id": "q07",
+    "missionId": "mission-4",
+    "type": "single-choice",
+    "title": "Familia de origen",
+    "prompt": "¿Cuál de estas actitudes favorece mejor el acompañamiento?",
+    "options": [
+      { "id": "a", "text": "Evitar siempre cualquier conversación sobre la familia de origen." },
+      { "id": "b", "text": "Escuchar respetuosamente y seguir las orientaciones del equipo." },
+      { "id": "c", "text": "Prometer que la situación terminará pronto." },
+      { "id": "d", "text": "Pedir al niño o niña que elija entre ambas familias." }
+    ],
+    "correctOptionIds": ["b"],
+    "participationPoints": 10,
+    "correctBonus": 40,
+    "feedback": {
+      "recommended": "Acompañar implica escuchar sin presionar, evitar promesas inciertas y solicitar orientación profesional.",
+      "review": "Miremos esta situación nuevamente. Evitar el tema, prometer plazos o pedir una “elección” entre familias no protege el vínculo ni la certeza del niño, niña o adolescente."
+    },
+    "sourceIds": ["official-program-01"]
+  },
+  {
+    "id": "case01",
+    "missionId": "mission-4",
+    "type": "case",
+    "title": "Extrañar a la familia de origen",
+    "prompt": "Sofía, de 9 años, acaba de llegar al hogar. Durante la noche dice que extraña mucho a su familia de origen y que no desea continuar conversando.",
+    "question": "¿Qué harías?",
+    "options": [
+      { "id": "a", "text": "Explicar que es mejor no volver a hablar del tema." },
+      { "id": "b", "text": "Escuchar, validar lo expresado y respetar que no quiera continuar conversando." },
+      { "id": "c", "text": "Cambiar inmediatamente de tema." },
+      { "id": "d", "text": "Prometer que volverá pronto con su familia." }
+    ],
+    "correctOptionIds": ["b"],
+    "participationPoints": 100,
+    "correctBonus": 0,
+    "feedback": {
+      "recommended": "Escuchar no significa presionar. También es importante evitar promesas sobre resultados o plazos que la familia de acogida no controla.",
+      "review": "Es una duda frecuente. Validar lo que siente y respetar el silencio suele cuidar más que cambiar de tema o prometer un reencuentro."
+    },
+    "sourceIds": ["official-program-01"]
+  },
+  {
+    "id": "case03",
+    "missionId": "mission-4",
+    "type": "case",
+    "title": "Una pregunta difícil",
+    "prompt": "Un niño pregunta: “¿Me voy a quedar aquí para siempre?”.",
+    "question": "¿Qué harías?",
+    "options": [
+      { "id": "a", "text": "“Sí, seguramente”." },
+      { "id": "b", "text": "“No lo sé todavía, pero podemos preguntarle al equipo y te acompañaremos”." },
+      { "id": "c", "text": "“Eso no se pregunta”." },
+      { "id": "d", "text": "“Depende de cómo te portes”." }
+    ],
+    "correctOptionIds": ["b"],
+    "participationPoints": 100,
+    "correctBonus": 0,
+    "feedback": {
+      "recommended": "La respuesta reconoce la incertidumbre sin evadir la pregunta ni entregar una promesa que no se puede garantizar.",
+      "review": "Miremos esta situación nuevamente. Prometer permanencia, callar la pregunta o condicionarla a la conducta no entrega seguridad real."
+    },
+    "sourceIds": ["official-program-01"]
+  },
+  {
+    "id": "q08",
+    "missionId": "mission-5",
+    "type": "single-choice",
+    "title": "Pedir ayuda",
+    "prompt": "Si una situación supera las herramientas de la familia, ¿qué acción es más apropiada?",
+    "options": [
+      { "id": "a", "text": "Ocultarla para evitar problemas." },
+      { "id": "b", "text": "Resolverla sin contarle a nadie." },
+      { "id": "c", "text": "Contactar al equipo que acompaña el acogimiento." },
+      { "id": "d", "text": "Publicarla en redes sociales para pedir opiniones." }
+    ],
+    "correctOptionIds": ["c"],
+    "participationPoints": 10,
+    "correctBonus": 40,
+    "feedback": {
+      "recommended": "Pedir ayuda es una conducta responsable y permite elaborar estrategias con acompañamiento profesional.",
+      "review": "Ocultar, resolver en soledad o exponer la situación en redes no cuida ni a la familia ni al niño, niña o adolescente."
+    },
+    "sourceIds": ["official-program-01"]
+  },
+  {
+    "id": "case05",
+    "missionId": "mission-5",
+    "type": "case",
+    "title": "Momento de tensión",
+    "prompt": "Durante varios días se repite una situación que altera las rutinas del hogar. Las estrategias utilizadas no están funcionando.",
+    "question": "¿Qué harías?",
+    "options": [
+      { "id": "a", "text": "Aplicar consecuencias cada vez más intensas." },
+      { "id": "b", "text": "Contactar al equipo, describir lo ocurrido y elaborar una estrategia conjunta." },
+      { "id": "c", "text": "Esperar indefinidamente a que se resuelva solo." },
+      { "id": "d", "text": "Comparar la conducta con la de otros niños." }
+    ],
+    "correctOptionIds": ["b"],
+    "participationPoints": 100,
+    "correctBonus": 0,
+    "feedback": {
+      "recommended": "Pedir apoyo permite comprender mejor la situación y actuar con acompañamiento profesional.",
+      "review": "Intensificar consecuencias, esperar sin red o comparar con otros niños suele agravar la tensión. El equipo está para elaborar una estrategia conjunta."
+    },
+    "sourceIds": ["official-program-01"]
+  },
+  {
+    "id": "q06",
+    "missionId": "mission-6",
+    "type": "single-choice",
+    "title": "Duración del acogimiento",
+    "prompt": "¿La duración del acogimiento es siempre igual?",
+    "options": [
+      { "id": "a", "text": "Sí, siempre dura seis meses." },
+      { "id": "b", "text": "Sí, siempre dura dieciocho meses." },
+      { "id": "c", "text": "No, depende del tipo de acogimiento y de la situación particular." },
+      { "id": "d", "text": "La familia decide libremente cuándo finaliza." }
+    ],
+    "correctOptionIds": ["c"],
+    "participationPoints": 10,
+    "correctBonus": 40,
+    "feedback": {
+      "recommended": "La duración depende del tipo de acogimiento y de la situación particular del niño, niña o adolescente.",
+      "review": "No hay un único plazo fijo ni una decisión unilateral de la familia. El tiempo depende del tipo de acogimiento y de cada situación."
+    },
+    "sourceIds": ["official-faq-01"]
+  },
+  {
+    "id": "q10",
+    "missionId": "mission-final",
+    "type": "reflection",
+    "title": "Decisión informada",
+    "prompt": "Después del recorrido, ¿qué aspecto conversarías con tu hogar antes de avanzar?",
+    "options": [
+      { "id": "a", "text": "Rutinas." },
+      { "id": "b", "text": "Red de apoyo." },
+      { "id": "c", "text": "Expectativas." },
+      { "id": "d", "text": "Disponibilidad emocional." },
+      { "id": "e", "text": "Todas las anteriores." }
+    ],
+    "correctOptionIds": ["a", "b", "c", "d", "e"],
+    "participationPoints": 50,
+    "correctBonus": 0,
+    "feedback": {
+      "recommended": "Una decisión informada puede considerar todos estos aspectos y conversarse con el equipo del programa.",
+      "review": "No hay una única respuesta correcta. Rutinas, red de apoyo, expectativas y disponibilidad emocional merecen una conversación en el hogar."
+    },
+    "sourceIds": ["official-program-01"]
+  }
+]

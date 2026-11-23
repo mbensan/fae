@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Nunito", "Trebuchet MS", sans-serif;
+  --font-body: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: #fff9ef;
+  color: #0b376b;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid #7c3aed;
+  outline-offset: 3px;
+}
+
+.progress-bar::-webkit-progress-bar {
+  background: #e6edf4;
+  border-radius: 999px;
+}
+
+.progress-bar::-webkit-progress-value {
+  background: linear-gradient(90deg, #7ed957, #22a84a);
+  border-radius: 999px;
+}
+
+.progress-bar::-moz-progress-bar {
+  background: linear-gradient(90deg, #7ed957, #22a84a);
+}
+
+.option-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.reward-art {
+  height: 7rem;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  background: #fff9ef;
+}
+
+.reward-art svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+.mission-map {
+  position: relative;
+  overflow: hidden;
+  background: #8ec8f0;
+}
+
+.mission-map img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mission-pin {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: max-content;
+  max-width: 10.75rem;
+  padding: 0.3rem 0.55rem 0.3rem 0.3rem;
+  border: 0;
+  border-radius: 0.95rem;
+  background: rgb(255 255 255 / 90%);
+  box-shadow: 0 8px 18px rgb(6 59 120 / 16%);
+  color: #0b376b;
+  text-align: left;
+  text-decoration: none;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+
+.mission-pin--left {
+  flex-direction: row-reverse;
+  padding: 0.3rem 0.3rem 0.3rem 0.55rem;
+  text-align: right;
+}
+
+.mission-pin__icon {
+  display: grid;
+  width: 2.1rem;
+  height: 2.1rem;
+  flex: 0 0 2.1rem;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 96%);
+  box-shadow: inset 0 0 0 1px rgb(6 59 120 / 10%);
+  color: #063b78;
+  line-height: 0;
+}
+
+.mission-pin__icon svg {
+  display: block;
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+  margin: 0;
+  overflow: visible;
+}
+
+.mission-pin__text {
+  min-width: 0;
+}
+
+.mission-pin__eyebrow {
+  display: block;
+  color: #07559a;
+  font-size: 0.58rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.mission-pin__meta {
+  display: block;
+  color: #52677f;
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.mission-pin__title {
+  display: block;
+  font-family: Nunito, "Trebuchet MS", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.mission-pin--completed .mission-pin__icon {
+  background: #e9f8ec;
+  color: #15803d;
+}
+
+.mission-pin--locked .mission-pin__icon {
+  background: rgb(246 248 250 / 90%);
+  color: #718096;
+}
+
+.mission-pin--current {
+  z-index: 4;
+  box-shadow: 0 0 0 2px #0878be, 0 8px 18px rgb(6 59 120 / 16%);
+}
+
+dialog::backdrop {
+  background: rgb(6 59 120 / 45%);
+}
+
+body.text-large {
+  font-size: 1.125rem;
+}
+
+body.contrast-high {
+  color: #031c3d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
